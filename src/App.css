@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+:root {
+  --green: #1abc9c;
+  --white: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 00px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.wrapper {
+    display: grid;
+    /*grid-gap: 10px;*/
+    grid-template-columns: 20% 80% ;
+ 
+    background-color: #fff;
+    color: #444;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .wrapper > nav{
+    border-right: 1px solid var(--green) ;
+    height: 100vh;
+   
   }
-  to {
-    transform: rotate(360deg);
+
+
+  .wrapper > nav > .info-nav{
+    background-color: var(--green);
+    width: inherit;
+    height: 80px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 70px;
+    color: var(--white);;
+
+
+
   }
+  .wrapper > nav> ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+.wrapper> nav>ul> li{
+  padding: 10px;
+  width: 100%;
+}
+.wrapper> nav>ul> li> a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;  
+    padding: 8px 16px;
+  }
+  .under-nav{    
+    margin-top: 100px;
+
+  }
+  .gear-main > div{
+    width: 50px;
+    height: 50px;
+
+  }
+ 
+  .gear-main{
+    display: flex;
+    justify-content: end;
+  /* margin-left: calc(100% - 18%);*/
+   cursor: pointer;
+  }
+
+  .float-left{
+    float: left !important;
+    
+  }
+
+ 
+  .under-nav-url{
+    margin-top: -100px;;
+    border-right: 1px solid var(--green) ;
+    display: none;
+  }
+
+
+  .under-nav-url > ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+  }
+
+  .under-nav-url > ul >li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  a:hover {
+    background-color: var(--green);
+    color: white;
+  }
+  
+
+
+  .wrapper >  .main{
+
+  }
+
+  .banner {
+    padding: 40px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+  }
+  .login-form, .form-div{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+
+   margin-top: 100px;;
+  }
+  .login-form, .form-div >form{
+    width: 50%;
+    line-height: 50px;;
+  }
+  .msg{
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .msg>div{
+    position: fixed;
+    bottom: 50px;
+  }
+  
+
+@keyframes show {
+    0%{ height: 0px;}
+    100%{ height: 100px;}
 }
