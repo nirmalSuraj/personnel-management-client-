@@ -17,12 +17,14 @@ if(Ilogin.status){
 const hideAlert= ()=>{
   $(".msg").hide();
 }
+Log.log(Ilogin.status)
 
   return (
     <>
-    <div className='msg'>
+    {Ilogin.status === 404 || Ilogin.message.length ?
+      <div className='msg'>
       <div className={`alert ${erros.getErrorByCode(Ilogin.status).color }  alert-dismissible fade show `} role="alert">
-        {`${Ilogin.status} : ${Ilogin.message}`}
+        {`${Ilogin.status} : ${Ilogin.message.length == 0?erros.getErrorByCode(Ilogin.status).message:Ilogin.message}`}
 
         {erros.getErrorByCode(Ilogin.status).status && Ilogin.errors ? Ilogin.errors.map((e,i:number)=>{
           return (<><p key={`x${i}`}>- {e} </p> </>)
@@ -30,7 +32,10 @@ const hideAlert= ()=>{
 
         <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close" onClick={hideAlert}></button>
       </div>
-      </div>
+      </div>:""
+    
+    }
+    
     
     </>
   )

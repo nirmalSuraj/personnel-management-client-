@@ -11,9 +11,10 @@ export class ErrosStatus{
 
   constructor(){
     this.statusCode["400"] ={status:400,color:this.danger} ;
-    this.statusCode["201"] ={status:404,color:this.success} ;
-    this.statusCode["200"] ={status:404,color:this.success} ;
-    this.statusCode["500"] ={status:404,color:this.danger} ;
+    this.statusCode["201"] ={status:201,color:this.success} ;
+    this.statusCode["200"] ={status:200,color:this.success} ;
+    this.statusCode["404"] ={status:404,color:this.danger,message:"Not found"} ;
+    this.statusCode["500"] ={status:500,color:this.danger} ;
   }
 
   public getErrorByCode(code:number):Erros{

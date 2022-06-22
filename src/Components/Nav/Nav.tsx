@@ -26,7 +26,7 @@ return (
         <Link to="/about">About</Link>
       </li>
       <li>
-        <Link to="/users">Users</Link>
+        <Link to="/users-get">Users</Link>
       </li>
     </ul>
     <div className="under-nav">

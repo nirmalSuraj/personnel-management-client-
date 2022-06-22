@@ -1,4 +1,5 @@
-import { EmployeeType } from "../../Interface/Generale/Generale";
+import { IwithData } from "../../Interface/Data/Idata";
+import { EmployeeType, IgetEmployeeType } from "../../Interface/Generale/Generale";
 import { ARequest } from "./Abstract/AResuest";
 
 export class SettingsService<T> extends ARequest {
@@ -11,8 +12,16 @@ export class SettingsService<T> extends ARequest {
     }
 
 
-  public createEmployeeType(createData:EmployeeType){
-   return this.PostRequest(<EmployeeType>createData,this.path)
+  public createEmployeeType(createData:T){
+   return this.PostRequest<T>(createData,this.path)
+  }
+
+  public GetData(){
+     return this.Get<IwithData<T>>(this.path);
+  }
+
+  public DeleteById(){
+     return this.Delete(this.path);
   }
 
 

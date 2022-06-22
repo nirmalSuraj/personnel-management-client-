@@ -21,7 +21,7 @@ return (
          <div className="under-nav-url">
          <ul className="mt-5">
            <li>
-             <Link to="/employee-types">Employee types</Link>
+             <Link to="/employee-types-create">Employee types</Link>
            </li>
            <li>
              <Link to="/about">About</Link>

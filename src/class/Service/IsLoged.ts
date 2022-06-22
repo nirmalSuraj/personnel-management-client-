@@ -14,15 +14,11 @@ export class IsLoged extends ARequest{
     this.path = this.url+path;
   }
 
-  public check(callback:Function):void{
+  public check():Promise<Object>{
     const token:string|boolean = cookie.GetCookies("token");
-   
-    if(typeof token === "string" ){
-      const request:CheckLogin = {token:token};
-      const data =this.PostRequest(request,this.path,callback);
 
-    }
-   
+      const request:CheckLogin = {token:token.toString()};
+     return this.PostRequest(request,this.path);
   }
 
 }
