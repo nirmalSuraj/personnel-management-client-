@@ -37,7 +37,6 @@ const Login =({title}:props)=>{
         
         const  index  = event.target.id as ObjectKey
         inputs[index] = event.target.value;
-        Log.log(inputs)
         setCredentials(inputs);
       }
       

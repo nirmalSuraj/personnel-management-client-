@@ -5,28 +5,20 @@ import { Log } from "../Log";
 
 export class ARequest{
     protected url = "http://127.0.0.1:8000/api/";
+    private herder = { 'Authorization': 'Bearer ' + cookie.GetCookies("token")};
     constructor(){}
 
-    protected PostRequest<T>(requestData:T,path:string,callback?:Function){
-        var test:Icreated|undefined ;
-        
-        axios.post(path, requestData,  {headers: {
-            'Authorization': 'Bearer ' + cookie.GetCookies("token")
-          }})
-        .then((res)=>{
-            const status = res.status;
-            if(status != 401 && callback){
-                callback(1)
-            }
-            test = {...res.data,status:status};
-        })
-        .catch(function (error) {
-            test = {...error.response.data,status:error.response.status};
-      
-        });
-        
-        return test;
+    protected async PostRequest<T>(requestData:T,path:string):Promise<Object>{
+       
+       return await axios.post(path, requestData,  {headers:this.herder });
+    }
 
+    protected async Get<T>(path:string) {
+        return  axios.get(path,{headers:this.herder});
+    }
+
+    protected async  Delete(path:string){
+        return axios.delete(path, {headers:this.herder });
     }
 
 }
