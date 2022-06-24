@@ -7,6 +7,7 @@ import { DataResolve } from "../../class/Service/DataResolve";
 import { Icreated, IDataPaginate, Ideleted, IwithData, links } from "../../Interface/Data/Idata";
 import  $ from 'jquery';
 import Pagination from "../Pagination/Pagination";
+import { Link } from "react-router-dom";
 
 interface props {
   setResponse:Function,
@@ -22,15 +23,12 @@ const [resolve,setResolve] = useState<IDataPaginate<GetUsers>>();
   useEffect(() => {  
   let data =  new SettingsService<GetUsers>(paginate===""?"users":paginate);
       data.GetData().then(e=>{
-       
-
+      
         const data = DataResolve.resolveSuccess<IDataPaginate<GetUsers>>(e);
         setResolve(data)
         setResponse(resolve);
         setLinks(data.list.links);
          
-
-    
       }).catch(e=>{
         let res = DataResolve.resolveError<IDataPaginate<GetUsers>>(e);
         setResponse(res)
@@ -46,7 +44,7 @@ const [resolve,setResolve] = useState<IDataPaginate<GetUsers>>();
         setResponseDel(x)
         if(x.status){window.location.reload();}
       }).catch(e=>{DataResolve.resolveError<IwithData<IgetEmployeeType>>(e)
-        //setResponseDel())
+      
       })
     }
 
@@ -63,6 +61,7 @@ const [resolve,setResolve] = useState<IDataPaginate<GetUsers>>();
           <th scope="col">Perform Hours</th>
           <th scope="col">Has relationship</th>
           <th scope="col">Salary per hour</th>
+          <th scope="col"></th>
        </tr>
       </thead>
       <tbody>
@@ -80,7 +79,8 @@ const [resolve,setResolve] = useState<IDataPaginate<GetUsers>>();
                         <td>{x.kids}</td>
                         <td>{x.perform_hours}</td>
                         <td>{x.relationship?"yess":"no"}</td>
-                        <td>{x.salary_per_hour} €</td>
+                        <td className="d-flex">{x.salary_per_hour} €   </td>
+                        <td><Link to={`users-create/${e.id}`} >Update</Link></td>
                         </>
                       )
                     } 

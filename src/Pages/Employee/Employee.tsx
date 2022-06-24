@@ -7,6 +7,7 @@ import GetEmployee from "../../Components/Employee/GetEmployee";
 import GetEmployees from "../../Components/Employee/GetEmployees";
 import DynamicNavbar from "../../Components/Nav/DynamicNav";
 
+
 interface props  {title : IPageName}
 const Employee = ({title}:props)=>{
    const [response ,setResponse] = useState<IwithData<IgetEmployeeType>>();

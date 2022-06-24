@@ -39,20 +39,31 @@ export interface GetUsers {
   "user_details":userDetails[]
 }[];
 
-export interface UpsertUsers  {
+interface UpsertUsersUsers {
+  "password":string,
+  "name":string,
+  "email":string,
+  "id"?: number,
+}
+interface UpsertUsersDetails {
   "national_insurance": string,
   "kids": number,
   "perform_hours": number,
   "week_hours": number,
   "relationship": number,
   "salary_per_hour": number,
-  "user_id": number,
+  "id"?: number,
   "created_at": string,
   "updated_at": string,
   "employee_type_id": number,
-  "password":string,
-  "name":string,
-  "email":string
+}
+
+export interface UpsertUsersFullObject extends UpsertUsersUsers,UpsertUsersDetails  {}
+
+export interface UpsertUsersSendRequest {
+    "users":UpsertUsersUsers[],
+    "details":UpsertUsersDetails[]
+
 }
 
 export interface DropDownTypes{

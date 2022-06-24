@@ -24,7 +24,7 @@ import { Icreated, Ilogin } from './Interface/Data/Idata';
 import Get from './Pages/Employee/Get';
 
 import Employee from './Pages/Employee/Employee';
-import UpsertForm from './Components/Employee/UpsertForm';
+//import UpsertForm from './Components/Employee/UpsertForm';
 import Upsert from './Pages/Employee/Upsert';
 
 function App() {
@@ -73,8 +73,11 @@ setTimeout(()=>{setCheckOnLogger(!checkOnLogger)}, 10000)
             <Route path="/Users-get">
                <Employee title={{title:"Employees"}} />
             </Route>
-            <Route path="/Users-create">
+            <Route path="/Users-create/:id?">
                <Upsert title={{title:"Employees"}} />
+            </Route>
+            <Route path="/Users-update">
+               <Employee title={{title:"Employees"}} />
             </Route>
             <Route path="/">
               {!auth.Auth()&&<Login title={{title:"Login"}} />}

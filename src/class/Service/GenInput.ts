@@ -18,4 +18,19 @@ export class GenInput{
 
     }
 
+    public static Fill <T>(fields:any):T{
+
+        type ObjectKey = keyof typeof inputs; // this will dynamically select key position of the js object
+          const inputs =  fields
+  
+           // hold old values                            
+          for (const [key, value] of Object.entries(inputs)) {
+              const  index  = key as ObjectKey
+              inputs[index] = value;
+          }
+                        
+          return inputs;
+  
+      }
+
 }

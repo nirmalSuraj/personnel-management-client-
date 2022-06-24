@@ -13,6 +13,12 @@ export class ARequest{
        return await axios.post(path, requestData,  {headers:this.herder });
     }
 
+    
+    protected async UpdateRequest<T>(requestData:T,path:string):Promise<Object>{
+       
+        return await axios.put(path, requestData,  {headers:this.herder });
+     }
+
     protected async Get<T>(path:string) {
         return  axios.get(path,{headers:this.herder});
     }
