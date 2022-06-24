@@ -17,7 +17,7 @@ const Get = ({title}:props)=>{
   return (<>
      <PageName title={title} />
      <DynamicNavbar ListOfPage={ListOfPage} />
-     <div className="form-div">
+     <div className="list">
        <GetEmployee setResponse={setResponse} setResponseDel={setResponseDel}/>
      </div>
      {handel != undefined &&  <Alert  Ilogin={handel}/>}
