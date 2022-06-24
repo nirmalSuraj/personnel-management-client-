@@ -17,7 +17,7 @@ const Employee = ({title}:props)=>{
   return (<>
         <PageName title={title} />
       <DynamicNavbar ListOfPage={ListOfPage} />
-      <div className="form-div" >     
+      <div className="list" >     
       <GetEmployees setResponse={setResponse} setResponseDel={setResponseDel} />
      {response != undefined &&  <Alert  Ilogin={response}/>}
 
