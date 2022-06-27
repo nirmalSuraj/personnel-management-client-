@@ -72,6 +72,6 @@ export interface DropDownTypes{
 };
 
 
-
+export interface urlObj{url:string,name:string}
 
 

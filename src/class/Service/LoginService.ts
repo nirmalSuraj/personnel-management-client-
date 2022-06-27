@@ -25,6 +25,8 @@ export class LoginService extends ARequest {
 
         const status = res.status;
         cookie.SetCookie("token",res.data.token,1);
+        cookie.SetCookie("type",res.data.type,1);
+        cookie.SetCookie("id",res.data.id,1);
         test(new AuthError({...res.data,status:status}).error);
       })
       .catch(function (error) {

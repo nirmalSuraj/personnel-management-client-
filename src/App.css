@@ -131,6 +131,9 @@ body {
    margin-top: 100px;;
 
   }
+  .login-form{
+    margin: 10% auto;
+  }
   .form-div{
     display: flex;
     justify-content: center;

@@ -8,6 +8,7 @@ import { Icreated, IDataPaginate, Ideleted, IwithData, links } from "../../Inter
 import  $ from 'jquery';
 import Pagination from "../Pagination/Pagination";
 import { Link } from "react-router-dom";
+import cookie from "../../class/Cookie/Cookie";
 
 interface props {
   setResponse:Function,
@@ -20,7 +21,10 @@ const[paginate,setPaginate]= useState<string>("users");
 const[links,setLinks]= useState<links[]>();
 const [resolve,setResolve] = useState<IDataPaginate<GetUsers>>();
 
-  useEffect(() => {  
+  useEffect(() => { 
+    
+
+
   let data =  new SettingsService<GetUsers>(paginate===""?"users":paginate);
       data.GetData().then(e=>{
       
