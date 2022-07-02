@@ -26,6 +26,7 @@ import Get from './Pages/Employee/Get';
 import Employee from './Pages/Employee/Employee';
 //import UpsertForm from './Components/Employee/UpsertForm';
 import Upsert from './Pages/Employee/Upsert';
+import Schedule from './Pages/Schedule/Schedule';
 
 function App() {
   const [checkOnLogger,setCheckOnLogger] = useState<boolean>(false);
@@ -78,6 +79,9 @@ setTimeout(()=>{setCheckOnLogger(!checkOnLogger)}, 10000)
             </Route>
             <Route path="/Users-update">
                <Employee title={{title:"Employees"}} />
+            </Route>
+            <Route path="/schedule-get">
+               <Schedule title={{title:"Schedule"}} />
             </Route>
             <Route path="/">
               {!auth.Auth()&&<Login title={{title:"Login"}} />}

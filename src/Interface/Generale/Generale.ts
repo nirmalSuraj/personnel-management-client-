@@ -71,6 +71,19 @@ export interface DropDownTypes{
     "id": number
 };
 
+export interface Schedule {
+  "id": number,
+  "break": number,
+  "from": string,
+  "till": string,
+  "month": string,
+  "old_data": string,
+  "times_updated": number
+}
+export interface Dropdown{
+  "id": number,
+  "name": string
+}
 
 export interface urlObj{url:string,name:string}
 

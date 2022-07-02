@@ -11,7 +11,7 @@ export class RestrictionService{
 
   private allowLinks:{ [route: string] : urlObj[]; } = {
     "employee-waiter":[{url:"/schedule-get",name:"Schedule"}],
-    "employee-admin":[{url:"/about",name:"About"},{url:"/users-get",name:"Users"}]
+    "employee-admin":[{url:"/about",name:"About"},{url:"/users-get",name:"Users"},{url:"/schedule-get",name:"Schedule"}]
   }
   private allowSettings:{ [route: string] : urlObj[]; } = {
     "employee-waiter":[]
